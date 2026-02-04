@@ -6,6 +6,6 @@ Check out our [website](http://deepdive26.xyz).
 ## Contributors
 [Alfonso Martinez](https://github.com/Alfonso-mtzj)
 <br> [Alyssa Dambeck](Put your link here)
-<br> [Grace Hawkins](Put your link here)
+<br> [Grace Hawkins](https://github.com/Grace-1019)
 <br> [Rachel Ross](Put your link here)
 <br> [Wade Zimmerle](https://github.com/WadeZimmerleUCF)
