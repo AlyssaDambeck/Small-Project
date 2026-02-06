@@ -1,0 +1,188 @@
+*
+{
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+body#contacts-page
+{
+    margin: 0;
+    min-height: 100vh;
+
+    background-image:
+    linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('../images/contacts-bg.avif');
+    background-size: cover;
+    background-position: center;
+
+    color: #f0f8ff;
+}
+
+/* top */
+.top-nav
+{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 40px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: rgba(180, 220, 255, 0.15);
+    backdrop-filter: blur(12px);
+}
+.nav-logo
+{
+    width: 50px;
+}
+.nav-left
+{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.nav-title
+{
+    font-weight: bold;
+    font-size: 18px;
+}
+.nav-links
+{
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+.nav-links a
+{
+    color: #e0f2ff;
+    text-decoration: none;
+    font-weight: 500;
+    opacity: 0.85;
+}
+.nav-links a:hover
+{
+    opacity: 1;
+}
+.nav-links .active
+{
+    border-bottom: 2px solid #90dbff;
+    padding-bottom: 2px;
+}
+.tab-bar
+{
+    margin: 120px auto 0 auto;
+    display: flex;
+    justify-content: left;
+    gap: 6px;
+    z-index: 5;
+    position: relative;
+}
+.tab
+{
+    padding: 12px 22px;
+    cursor: pointer;
+
+    background: rgba(180, 220, 255, 0.18);
+    backdrop-filter: blur(12px);
+
+    border-radius: 10px 10px 0 0;
+    color: #e0f2ff;
+    font-weight: 500;
+
+    opacity: 0.75;
+}
+.tab:hover
+{
+    opacity: 1;
+}
+.tab.active
+{
+    opacity: 1;
+    background: rgba(200, 235, 255, 0.28);
+
+    position: relative;
+    z-index: 10;
+}
+.tab-content
+{
+    width: 80%;
+    max-width: 900px;
+    margin: 0 auto;
+
+    background: rgba(180, 220, 255, 0.18);
+    backdrop-filter: blur(16x);
+
+    border-radius: 0 20px 20px 20px;
+    padding: 40px;
+
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+}
+.logout
+{
+    color: #e0f2ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.dashboard
+{
+    margin: 120px auto;
+    width: 80%;
+    max-width: 900px;
+
+    background: rgba(180, 220, 255, 0.18);
+    backdrop-filter: blur(16px);
+
+    border-radius: 22px;
+    padding: 40px;
+
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+}
+
+.search-bar
+{
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+.contact-list
+{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-card
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(10px);
+
+    padding: 15px 20px;
+    border-radius: 14px;
+}
+
+.delete-icon
+{
+    width: 20px;
+	height: 20px;
+	cursor: pointer;
+
+	color: #e0f2ff; /* soft light blue */
+	opacity: 0.75;
+}
+
+.delete-icon:hover
+{
+    opacity: 1;
+    transform: scale(1.1);
+    color: #ff6b6b;
+}
