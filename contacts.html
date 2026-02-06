@@ -1,0 +1,54 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Deep Dive | Contacts</title>
+
+	<script type="text/javascript" src="js/code.js"></script>
+    <link href="css/contacts.css" rel="stylesheet">	
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+	
+	<!--
+	<script type="text/javascript">
+	document.addEventListener('DOMContentLoaded', function() 
+	{
+		readCookie();
+	}, false);
+	</script>
+-->
+	
+</head>
+<body id="contacts-page">
+
+	<div class="top-nav">
+		<img src="images/deepdive_logo.png" alt="Deep Dive Logo" class="nav-logo">
+		<span class="nav-title">Deep Dive</span>
+		<a href="#" class="logout">Logout</a>
+	</div>
+	<div class="tab-bar">
+		<div class="tab active">Contacts</div>
+		<div class="tab">Add Contact</div>
+		<div class="tab">About Us</div>
+	</div>
+
+    <!-- Main dashboard-->
+	<div class="dashboard">
+		<h1>My Contacts</h1>
+		<input
+			type="text"
+			placeholder="Search contacts..."
+			class="search-bar"
+		>
+
+		<div class="contact-list">
+			<div class="contact-card">
+				<div>
+					<strong>John Doe</strong><br>
+					<span>555-555-5555</span>
+				</div>
+				<img src="icons/trash.svg" class="delete-icon" alt="Delete contact">
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
