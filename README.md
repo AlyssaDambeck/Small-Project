@@ -1,7 +1,7 @@
 # Deep Dive
 *a personal contact manager* 
 
-Check out our [website](http://deepdive26.xyz).
+Check out our [website]((http://deepdive26.xyz/Home.html)).
 
 ## Contributors
 [Alfonso Martinez](https://github.com/Alfonso-mtzj)
