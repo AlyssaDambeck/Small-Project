@@ -1,0 +1,175 @@
+/* ============================================================
+   Deep Dive - Login Styles (css/login.css)
+   ============================================================ */
+
+
+/* ============================================================
+   GLOBAL BASE SETTINGS
+   - Use border-box sizing everywhere
+   - Set Ubuntu as the default font for this page
+   ============================================================ */
+* {
+    box-sizing: border-box;              /* width/height include padding + border */
+    font-family: 'Ubuntu', sans-serif;   /* main font for login screen */
+}
+
+
+/* ============================================================
+   LOGIN PAGE BACKGROUND + LAYOUT ROOT
+   - Full viewport height
+   - Flex layout splits left + right panels
+   - Background image with dark overlay for contrast
+   ============================================================ */
+body#login-page {
+    margin: 0;
+    height: 100vh;          /* fill full screen height */
+    display: flex;          /* enables side-by-side panels */
+
+    /* background image with dark gradient overlay */
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+        url('../Images/login-bg.jpg');
+
+    background-size: cover;     /* scale image to cover screen */
+    background-position: center;/* keep image centered */
+}
+
+
+/* ============================================================
+   LEFT SIDE — BRAND / LOGO PANEL
+   - Holds logo + app name + tagline
+   - Vertically centered content
+   ============================================================ */
+.logo-panel {
+    width: 60%;                 /* takes left portion of screen */
+    padding: 60px;              /* inner spacing */
+
+    color: #e8f6ff;             /* light text color */
+
+    display: flex;
+    flex-direction: column;      /* stack logo, title, tagline */
+    justify-content: center;     /* vertical centering */
+}
+
+
+/* Logo image size + spacing */
+.logo {
+    width: 80px;
+    margin-bottom: 20px;
+}
+
+
+/* Main app title text */
+.logo-panel h1 {
+    font-size: 48px;
+    margin: 0;                  /* remove default heading margin */
+}
+
+
+/* Short description/tagline under title */
+.tagline {
+    font-size: 18px;
+    margin-top: 10px;
+    opacity: 0.85;              /* slightly faded for hierarchy */
+}
+
+
+/* ============================================================
+   RIGHT SIDE — LOGIN PANEL WRAPPER
+   - Centers the login card both ways
+   ============================================================ */
+.login-panel {
+    width: 60%;                 /* matches design split */
+    display: flex;
+    justify-content: center;     /* horizontal center */
+    align-items: center;         /* vertical center */
+}
+
+
+/* ============================================================
+   LOGIN CARD (GLASS PANEL)
+   - Frosted/glass effect with blur + transparency
+   - Fixed size card centered in right panel
+   ============================================================ */
+.login-card {
+    background: rgba(180, 220, 255, 0.22);
+    backdrop-filter: blur(18px);         /* glass effect */
+
+    padding: 40px;
+    width: 500px;
+    height: 500px;
+
+    border-radius: 18px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+
+    color: white;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center; /* vertical center inside card */
+    align-items: center;     /* horizontal center inside card */
+}
+
+
+/* Card title (Login / Sign In text) */
+.login-card h2 {
+    margin-bottom: 20px;
+}
+
+
+/* ============================================================
+   LOGIN INPUT FIELDS
+   - Shared style for username/password inputs
+   ============================================================ */
+.login-card input {
+    width: 100%;
+    max-width: 360px;        /* keeps inputs from stretching too wide */
+
+    padding: 12px;
+    margin-bottom: 20px;
+
+    border: none;
+    border-radius: 10px;
+    outline: none;           /* remove default focus outline */
+}
+
+
+/* ============================================================
+   LOGIN BUTTON
+   - Full width button with gradient background
+   ============================================================ */
+.login-card button {
+    width: 100%;
+    max-width: 360px;
+
+    padding: 12px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: linear-gradient(135deg, #00b4d8, #0077b6);
+    color: white;
+    font-weight: bold;
+
+    cursor: pointer;         /* hand cursor on hover */
+}
+
+
+/* ============================================================
+   SIGNUP / EXTRA TEXT UNDER BUTTON
+   - Small helper text with link
+   ============================================================ */
+.signup-text {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+
+/* Signup link styling */
+.signup-text a {
+    color: #cceaff;
+    text-decoration: underline;
+    cursor: pointer;
+}

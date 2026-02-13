@@ -1,0 +1,533 @@
+/* ============================================================
+   Deep Dive - Contacts Styles (css/contacts.css)
+   ============================================================ */
+
+
+/* ============================================================
+   GLOBAL DEFAULTS
+   - Keeps sizing consistent across elements
+   - Sets the base font for this page
+   ============================================================ */
+* {
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+
+/* ============================================================
+   PAGE BACKGROUND / BASE TEXT
+   - Full-page background image with a dark overlay so text pops
+   - Top padding leaves room for the fixed nav + tab bar
+   ============================================================ */
+body#contacts-page {
+    margin: 0;
+    min-height: 100vh;
+
+    /* overlay + background image */
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+        url('../Images/Contacts.avif');
+
+    background-size: cover;        /* fills the screen */
+    background-position: center;   /* stays centered */
+    background-attachment: fixed;  /* keeps image fixed when scrolling */
+
+    color: #f0f8ff;                /* default text color for the page */
+    padding-top: 140px;            /* space for fixed header + tabs */
+}
+
+
+/* ============================================================
+   NAVIGATION BAR (FIXED TOP) - ADDED FROM OTHER PAGES
+   ============================================================ */
+.site-nav {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 0;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 20px;
+    width: 100%;
+}
+
+.site-nav .logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 15px 0;
+    display: block;
+}
+
+.site-nav .logo:hover {
+    opacity: 0.9;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.3s;
+    padding: 10px 0;
+}
+
+.nav-links a:hover {
+    opacity: 0.8;
+}
+
+.nav-links .nav-cta {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid white;
+    transition: all 0.3s;
+}
+
+.nav-links .nav-cta:hover {
+    background-color: white;
+    color: #667eea;
+}
+
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* ============================================================
+   TAB BAR (FIXED UNDER TOP NAV)
+   - Sits right below the top nav
+   - Tabs are centered and spaced evenly
+   ============================================================ */
+.tab-bar {
+    position: fixed;
+    top: 70px;
+    left: 0;
+
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+
+    z-index: 99;       /* below top-nav but above content */
+    padding: 0 40px;   /* gives some breathing room on the sides */
+}
+
+
+/* Individual tab styling */
+.tab {
+    padding: 12px 30px;
+    cursor: pointer;
+
+    /* glass look */
+    background: rgba(180, 220, 255, 0.18);
+    backdrop-filter: blur(12px);
+
+    border-radius: 10px 10px 0 0; /* rounded top like a tab */
+    color: #FFFFFF;
+    font-weight: 500;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+
+    opacity: 0.75; /* default: slightly faded */
+    transition: opacity 0.3s, background-color 0.3s;
+}
+
+/* Hover makes tabs feel more "active" */
+.tab:hover {
+    opacity: 1;
+}
+
+/* Active tab stands out more */
+.tab.active {
+    opacity: 1;
+    background: rgba(200, 235, 255, 0.28);
+}
+
+
+/* ============================================================
+   MAIN DASHBOARD WRAPPER
+   - Centers the content
+   - Frosted/glass card style with shadow
+   ============================================================ */
+.dashboard {
+    margin: 20px auto;
+
+    width: 90%;
+    max-width: 1000px;
+
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(16px);
+
+    border-radius: 22px;
+    padding: 40px;
+
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+}
+
+
+/* Page header inside dashboard */
+.dashboard h1 {
+    margin-top: 0;
+    margin-bottom: 25px;
+
+    font-size: 32px;
+    color: #FFFFFF;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+
+/* ============================================================
+   SEARCH CONTAINER + BUTTON
+   - Groups search bar and button together
+   ============================================================ */
+.search-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.search-button {
+    width: 100%;
+    padding: 12px 20px;
+    
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    
+    border: none;
+    border-radius: 10px;
+    
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Ubuntu', sans-serif;
+    
+    cursor: pointer;
+    
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.search-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.search-button:active {
+    transform: translateY(0);
+}
+
+
+/* ============================================================
+   SEARCH BAR
+   - Full width input with comfortable padding
+   ============================================================ */
+.search-bar {
+    width: 100%;
+    padding: 12px 20px;
+    margin-bottom: 0;
+
+    border-radius: 10px;
+    border: none;
+    outline: none;
+
+    font-size: 16px;
+    font-family: 'Ubuntu', sans-serif;
+    
+    color: #333333;
+    background-color: #ffffff;
+}
+
+.search-bar::placeholder {
+    color: #999999;
+}
+
+
+/* ============================================================
+   CONTACT LIST LAYOUT
+   - Column layout with gaps between rows/sections
+   ============================================================ */
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+/* Table takes full width */
+.contact-list table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+
+/* Row background with blur for a "card row" feel */
+.contact-list table tr {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 14px;
+}
+
+
+/* Cell spacing + text styling */
+.contact-list table td {
+    padding: 15px 20px;
+    color: #1a1a1a;
+    font-size: 16px;
+}
+
+
+/* Round the left edge of each row */
+.contact-list table td:first-child {
+    border-radius: 14px 0 0 14px;
+}
+
+
+/* Round the right edge + align actions to the right */
+.contact-list table td:last-child {
+    border-radius: 0 14px 14px 0;
+    text-align: right;
+}
+
+
+/* Inputs inside the table (for editing contact info) */
+.contact-list table td input {
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+
+    padding: 8px 12px;
+    border-radius: 6px;
+
+    color: #1a1a1a;
+    width: 100%;
+
+    font-family: 'Ubuntu', sans-serif;
+}
+
+
+/* ============================================================
+   TABLE BUTTONS (EDIT / SAVE / DELETE, ETC.)
+   - Transparent base with hover scale
+   - Color variants (lime / amber) add meaning
+   ============================================================ */
+.w3-button {
+    background-color: transparent;
+    border: none;
+
+    padding: 8px 12px;
+    cursor: pointer;
+
+    border-radius: 6px;
+    transition: background-color 0.3s, transform 0.2s;
+
+    color: #FFFFFF;
+    font-size: 18px;
+}
+
+/* Makes buttons feel clickable */
+.w3-button:hover {
+    transform: scale(1.1);
+}
+
+
+/* Lime variant (usually for "confirm/save") */
+.w3-lime {
+    background-color: #4CAF50;
+}
+
+.w3-lime:hover {
+    background-color: #45a049;
+}
+
+
+/* Amber variant (usually for "edit/warn") */
+.w3-amber {
+    background-color: #FF9800;
+}
+
+.w3-amber:hover {
+    background-color: #F57C00;
+}
+
+
+/* ============================================================
+   ADD CONTACT FORM
+   - Label + input spacing
+   - Buttons share consistent sizing
+   ============================================================ */
+.form-group {
+    margin-bottom: 20px; /* spacing between form rows */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+
+    color: #FFFFFF;
+    font-weight: 500;
+    font-size: 16px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+
+/* Shared input style for the form */
+.form-input {
+    width: 100%;
+    padding: 12px 15px;
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+
+    font-size: 16px;
+    font-family: 'Ubuntu', sans-serif;
+
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+}
+
+
+/* Slight highlight when clicking into a field */
+.form-input:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 1);
+}
+
+
+/* Primary/secondary buttons share layout rules */
+.add-button,
+.cancel-button {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+    font-family: 'Ubuntu', sans-serif;
+
+    transition: background-color 0.3s, transform 0.2s;
+    margin-right: 10px;
+}
+
+
+/* Add/submit button */
+.add-button {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.add-button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+}
+
+
+/* Cancel button (more subtle) */
+.cancel-button {
+    background-color: #f44336;
+    color: white;
+}
+
+.cancel-button:hover {
+    background-color: #d32f2f;
+}
+
+
+/* ============================================================
+   EMPTY STATE
+   - Message shown when there are no contacts
+   ============================================================ */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+
+    color: #FFFFFF;
+    font-size: 18px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+
+/* ============================================================
+   RESPONSIVE (MOBILE)
+   - Tightens spacing so everything fits better on small screens
+   ============================================================ */
+@media (max-width: 768px) {
+
+    .dashboard {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .tab-bar {
+        padding: 0 20px;
+    }
+
+    .top-nav {
+        padding: 15px 20px;
+    }
+
+    .contact-list table td {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    /* Extra top padding since fixed header/tabs take more space on mobile */
+    body#contacts-page {
+        padding-top: 150px;
+    }
+
+    .nav-links {
+        display: none;
+
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+
+        flex-direction: column;
+
+        background: rgba(102, 126, 234, 0.95);
+        gap: 0;
+
+        padding: 20px;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-links a {
+        padding: 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+}
