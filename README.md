@@ -7,5 +7,5 @@ Check out our [website](http://deepdive26.xyz/Home.html).
 [Alfonso Martinez](https://github.com/Alfonso-mtzj)
 <br> [Alyssa Dambeck](https://github.com/AlyssaDambeck)
 <br> [Grace Hawkins](https://github.com/Grace-1019)
-<br> [Rachel Ross](Put your link here)
+<br> [Rachel Ross](https://github.com/ross-rachell)
 <br> [Wade Zimmerle](https://github.com/WadeZimmerleUCF)
