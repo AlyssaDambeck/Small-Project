@@ -1,0 +1,271 @@
+/* ===== BODY STYLING for main-page ===== */
+/* Select body element with ID 'main-page' */
+body#main-page {
+    /* Set fallback background color while background image loads */
+    background-color: #F3B02E;
+    /* Set background image (path goes up one level from css/ to project Images folder) */
+    background-image: url('../Images/login-bg.jpg'); 
+    /* Center background image horizontally and vertically */
+    background-position: center center;
+    /* Don't tile/repeat the background image */
+    background-repeat: no-repeat;
+    /* Keep background fixed when scrolling (parallax effect) */
+    background-attachment: fixed;
+    /* Scale background to cover entire viewport */
+    background-size: cover;
+    /* Remove default browser margins */
+    margin: 0;
+    /* Remove default browser padding */
+    padding: 0;
+    /* Set default font to Ubuntu */
+    font-family: 'Ubuntu', sans-serif;
+}
+
+/* ===== LOGO CONTAINER STYLING (added) ===== */
+/* Container for logo image in top-left corner */
+.logo-container {
+    /* Fix position relative to viewport (stays in place on scroll) */
+    position: fixed;
+    /* From top of viewport: 20 pixels */
+    top: 20px;
+    /* From left of viewport: 20 pixels */
+    left: 20px;
+    /* Layer priority - appears above most elements */
+    z-index: 100;
+}
+
+/* Styling for the actual logo image */
+.page-logo {
+    /* Set fixed width */
+    width: 80px;
+    /* Set fixed height */
+    height: 80px;
+    /* Fit image inside without distortion */
+    object-fit: contain;
+    /* Add subtle shadow around logo for depth */
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+}
+/* ===== END LOGO CONTAINER ===== */
+
+/* ===== MAIN CONTENT AREA STYLING (added) ===== */
+/* Container for main page content (heading and description) */
+.main-content {
+    /* Center text horizontally */
+    text-align: center;
+    /* Set text color to white */
+    color: #FFFFFF;
+    /* Add padding: top 100px, sides 20px, bottom 150px (leaves space for nav) */
+    padding: 100px 20px 150px 20px;
+    /* Ensure content takes up at least 80% of viewport height */
+    min-height: 80vh;
+    /* Use Flexbox for centering */
+    display: flex;
+    /* Stack content vertically */
+    flex-direction: column;
+    /* Vertically center the content */
+    justify-content: center;
+    /* Horizontally center the content */
+    align-items: center;
+}
+
+/* Styling for main heading (h1) inside main-content */
+.main-content h1 {
+    /* Set large font size (3rem = 48px) */
+    font-size: 3rem;
+    /* Add spacing above and below */
+    margin: 20px 0;
+    /* Add shadow effect to make text readable over background */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    /* Make text bold */
+    font-weight: bolder;
+}
+
+/* Styling for paragraph (p) inside main-content */
+.main-content p {
+    /* Set medium font size (1.2rem = 19.2px) */
+    font-size: 1.2rem;
+    /* Add top margin, remove bottom margin */
+    margin: 10px 0 0 0;
+    /* Add shadow effect for readability */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+/* ===== END MAIN CONTENT ===== */
+
+/* ===== BUBBLE NAVIGATION BAR STYLING (added) ===== */
+/* Container for circular navigation buttons at bottom */
+.bubble-nav {
+    /* Fix position relative to viewport */
+    position: fixed;
+    /* Place at bottom of screen: 20px from bottom */
+    bottom: 20px;
+    /* Position horizontally: 50% from left */
+    left: 50%;
+    /* Shift left by 50% of own width to center (using translateX) */
+    transform: translateX(-50%);
+    /* Display buttons horizontally in a row */
+    display: flex;
+    /* Space between buttons: 15px gap */
+    gap: 15px;
+    /* Layer priority - appears above other elements */
+    z-index: 1000;
+    /* Dark semi-transparent background */
+    background: rgba(0, 0, 0, 0.2);
+    /* Add padding inside nav bar */
+    padding: 15px;
+    /* Make nav bar rounded on all corners (creates pill shape) */
+    border-radius: 50px;
+    /* Blur effect for frosted glass appearance */
+    backdrop-filter: blur(10px);
+}
+
+/* Styling for individual circular nav buttons */
+.bubble-link {
+    /* Use flexbox to center content inside button */
+    display: flex;
+    /* Vertically center icon */
+    align-items: center;
+    /* Horizontally center icon */
+    justify-content: center;
+    /* Width of circular button: 60px */
+    width: 60px;
+    /* Height of circular button: 60px (makes it a perfect circle) */
+    height: 60px;
+    /* White semi-transparent background */
+    background: rgba(255, 255, 255, 0.9);
+    /* Make button circular: border-radius = width/2 */
+    border-radius: 50%;
+    /* Remove default link underline */
+    text-decoration: none;
+    /* Smooth animation for hover effects (0.3 seconds) */
+    transition: all 0.3s ease;
+    /* Add subtle shadow for depth */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling when hovering over bubble nav buttons */
+.bubble-link:hover {
+    /* Make background fully opaque white */
+    background: rgba(255, 255, 255, 1);
+    /* Scale button 10% larger on hover */
+    transform: scale(1.1);
+    /* Make shadow more prominent on hover */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Styling for emoji icons inside buttons */
+.bubble-icon {
+    /* Make emoji larger: 1.8rem = 28.8px */
+    font-size: 1.8rem;
+}
+
+/* ===== MOBILE RESPONSIVE STYLING (max-width: 600px) ===== */
+@media (max-width: 600px) {
+    /* Reduce gap between nav buttons on small screens */
+    .bubble-nav {
+        gap: 10px;
+        padding: 10px;
+        /* Move nav slightly higher on mobile */
+        bottom: 10px;
+    }
+
+    /* Make nav buttons smaller on mobile */
+    .bubble-link {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Make emojis smaller on mobile */
+    .bubble-icon {
+        font-size: 1.4rem;
+    }
+
+    /* Make heading smaller on mobile */
+    .main-content h1 {
+        font-size: 2rem;
+    }
+
+    /* Make paragraph smaller on mobile */
+    .main-content p {
+        font-size: 1rem;
+    }
+
+    /* Make logo smaller on mobile */
+    .page-logo {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    body {
+        background-image: url('../Images/login-bg.jpg') ; 
+    }
+}
+/* ===== END BUBBLE NAV ===== */
+
+/* ===== LEGACY STYLING (kept for compatibility) ===== */
+/* Styling for logo elements (if used elsewhere) */
+#logo {
+    /* Set width to 10% of parent container */
+    width: 10%;
+    /* Set height to 10% of parent container */
+    height: 10%;
+    /* Position from left: 0 (no offset) */
+    left: 0;
+}
+
+/* Styling for button elements */
+.btn {
+    /* Button text color: dark green */
+    color: #007D2F;
+    /* Button font: Montserrat */
+    font-family: 'Montserrat';
+    /* Don't make text italic */
+    font-style: normal;
+    /* Make button text bold */
+    font-weight: bolder;
+    /* Button text size: 2.3% of viewport width (responsive) */
+    font-size: 2.3vw;
+    /* Remove default button background */
+    background:none;
+    /* Remove default button border */
+    border:none;
+    /* Show pointer cursor on hover */
+    cursor: pointer;
+    /* Add padding inside button */
+    padding:0.3em 1.2em;
+    /* Add margin around button */
+    margin:0.6em 0.3em 0.3em 0;
+    /* Float the button to the right */
+    float: right;
+}
+
+/* Styling when hovering over buttons */
+.btn:hover,#welcome:hover {
+    /* Change color on hover */
+    color:#897261;
+}
+
+/* Styling for welcome text element */
+#welcome {
+    /* Set text color to white */
+    color: #FFFFFF;
+    /* Use fancy cursive font */
+    font-family: 'Island Moments';
+    /* Don't make text italic */
+    font-style: normal;
+    /* Make text bold */
+    font-weight: bolder;
+    /* Make text very large: 5% of viewport width */
+    font-size: 5vw;
+    /* Center text horizontally */
+    text-align: center;
+    /* Remove bottom margin for custom spacing */
+    margin-bottom: auto;
+    /* Display as block element (full width) */
+    display: block;
+    /* Remove underline text decoration */
+    text-decoration-line: none;
+}
+/* ===== END LEGACY STYLING ===== */
+
