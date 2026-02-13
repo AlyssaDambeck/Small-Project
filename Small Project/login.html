@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!-- ============================================================
+    Deep Dive - login.html
+    ============================================================ -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deep Dive - Login</title>
+    <script type="text/javascript" src="js/md5.js"></script>
+    <script type="text/javascript" src="js/code.js"></script>
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+</head>
+<body id="login-page">
+
+<!-- ================= NAVIGATION BAR START ================= -->
+<nav class="site-nav">
+    <div class="nav-container">
+        <a href="Home.html" class="logo">Deep Dive</a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="signup.html" class="nav-cta">Signup</a></li>
+        </ul>
+        <button class="nav-toggle" onclick="toggleNav()">☰</button>
+    </div>
+</nav>
+<!-- ================= NAVIGATION BAR END ================= -->
+
+<h1 id="title">Deep Dive</h1>
+
+<div id="loginDiv">
+    <span id="inner-title">Login</span>
+    
+    <div class="input-group">
+        <label>Username:</label>
+        <input type="text" id="loginName" placeholder="Username" />
+    </div>
+
+    <div class="input-group">
+        <label>Password:</label>
+        <input type="password" id="loginPassword" placeholder="Password"/>
+    </div>
+
+    <button type="button" id="loginButton" class="buttons" onclick="doLogin();">Login</button>
+    <span id="loginResult"></span>
+    
+    <p style="text-align: center; margin-top: 20px;">
+        Don't have an account? <a href="signup.html">Sign up here</a>
+    </p>
+</div>
+
+<script>
+function toggleNav() {
+    document.getElementById("navLinks").classList.toggle("show");
+}
+</script>
+
+</body>
+</html>
