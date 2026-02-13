@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<!-- ============================================================
+    Deep Dive - contacts.html
+    ============================================================ -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Deep Dive |Contacts</title>
+    <script type="text/javascript" src="js/code.js"></script>
+    <link href="css/contacts.css" rel="stylesheet">	
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    
+    <script type="text/javascript">
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        readCookie();
+        loadContacts();
+    }, false);
+    </script>
+</head>
+<body id="contacts-page">
+    <div class="top-nav">
+        <div style="display: flex; align-items: center; gap: 12px;">
+        </div>
+    </div>
+        <!-- ================= NAVIGATION BAR START ================= -->
+<nav class="site-nav">
+    <div class="nav-container">
+        <a href="Home.html" class="logo">Deep Dive</a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="Home.html" class="nav-cta">Logout</a></li>
+        </ul>
+        <button class="nav-toggle" onclick="toggleNav()">☰</button>
+    </div>
+</nav>
+<!-- ================= NAVIGATION BAR END ================= -->
+    <div class="tab-bar">
+        <div class="tab active" id="contactsTab" onclick="showContacts()">Contacts</div>
+        <div class="tab" id="addTab" onclick="showAddForm()">Add Contact</div>
+    </div>
+
+<!-- Contacts View -->
+<div id="contactsView" class="dashboard">
+    <h1>My Contacts</h1>
+    <div class="search-container">
+        <input
+            type="text"
+            id="searchText"
+            placeholder="Search contacts by name..."
+            class="search-bar"
+            onkeyup="searchContacts()"
+        />
+        <button type="button" class="search-button" onclick="searchContacts()">
+            🔍 Search
+        </button>
+    </div>
+    <div id="tbody" class="contact-list">
+        <!-- Contacts will be loaded here dynamically -->
+    </div>
+</div>
+
+    <!-- Add Contact Form -->
+    <div id="addContactView" class="dashboard" style="display: none;">
+        <h1>Add New Contact</h1>
+        <form id="addMe" onsubmit="addContact(); return false;">
+            <div class="form-group">
+                <label>First Name</label>
+                <input type="text" id="contactTextFirst" class="form-input" placeholder="Enter first name" required />
+            </div>
+            <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" id="contactTextLast" class="form-input" placeholder="Enter last name" required />
+            </div>
+            <div class="form-group">
+                <label>Phone Number</label>
+                <input type="text" id="contactTextNumber" class="form-input" placeholder="555-555-5555" required />
+            </div>
+            <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" id="contactTextEmail" class="form-input" placeholder="email@example.com" required />
+            </div>
+            <button type="submit" class="add-button">Add Contact</button>
+            <button type="button" class="cancel-button" onclick="showContacts()">Cancel</button>
+        </form>
+    </div>
+</body>
+</html>
