@@ -1,0 +1,377 @@
+/* Global reset and base styles (layout baseline) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ======================================================================
+   BASE PAGE STYLES
+   ====================================================================== */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+
+/* ======================================================================
+   HERO PAGE BACKGROUND
+   ====================================================================== */
+body.hero-page {
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+        url('../Images/login-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+
+/* ======================================================================
+   MAIN LAYOUT WRAPPER
+   ====================================================================== */
+.bodyContainer {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* ======================================================================
+   SIDE NAVIGATION (LEFT BAR)
+   ====================================================================== */
+.sidenav {
+    width: 250px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.sidenav img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+
+/* ======================================================================
+   SIDENAV LINKS + BUTTONS
+   ====================================================================== */
+.sidenav a {
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+
+
+.sidenav a img {
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.sidenav a:hover img {
+    transform: scale(1.05);
+}
+
+
+.sidenav a,
+.sidenav button {
+    text-decoration: none;
+    color: white;
+    padding: 12px;
+    border-radius: 5px;
+    text-align: left;
+    transition: background 0.3s;
+    border: none;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: bold;
+    background-color: transparent;
+}
+
+.sidenav a:hover,
+.sidenav button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+/* ======================================================================
+   MAIN CONTENT AREA
+   ====================================================================== */
+.container {
+    flex: 1;
+    padding: 40px;
+    overflow-y: auto;
+}
+
+
+/* ======================================================================
+   HERO SECTION (CENTERED CONTENT)
+   ====================================================================== */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+
+/* ======================================================================
+   CARD STYLING - OCEAN THEME WITH WHITE TEXT
+   ====================================================================== */
+.card {
+    /* Darker ocean glass for white text visibility */
+    background: linear-gradient(135deg, 
+        rgba(102, 126, 234, 0.35) 0%, 
+        rgba(118, 75, 162, 0.35) 100%);
+    backdrop-filter: blur(20px) saturate(180%);
+    
+    padding: 40px;
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    
+    box-shadow: 0 5px 20px rgba(0, 100, 150, 0.4);
+    max-width: 800px;
+}
+
+
+/*WHITE text for readability */
+.card h1,
+.card h2,
+.card p,
+.card li {
+    color: #ffffff; /*  WHITE */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.card h1 {
+    color: #ffffff; /*  WHITE */
+    margin-bottom: 20px;
+}
+
+.card h2 {
+    color: #e0f2ff; /*  Light blue-white */
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+
+.card p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+
+.card ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.card li {
+    margin-bottom: 10px;
+}
+
+
+/* Links - Light cyan */
+.card a {
+    color: #81d4fa; /*  Bright cyan */
+    text-decoration: underline;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.card a:hover {
+    color: #ffffff; /*  White on hover */
+}
+
+
+.card code {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: 'Courier New', monospace;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #e0f2ff; /*  Light blue-white */
+}
+
+
+/* ======================================================================
+   ACTION BUTTONS / LINKS
+   ====================================================================== */
+.actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+
+.action-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: transform 0.3s;
+}
+
+.action-btn:hover {
+    transform: translateY(-2px);
+}
+
+
+/* ======================================================================
+   MOBILE RESPONSIVE STYLES 
+   ====================================================================== */
+
+@media (max-width: 768px) {
+
+    .bodyContainer {
+        flex-direction: column;
+    }
+
+    /* FIX: Stop the nav items from scattering */
+    .sidenav {
+        width: 100%;
+        flex-direction: column;     /* was row */
+        flex-wrap: nowrap;          /* was wrap */
+        justify-content: flex-start;/* was space-between */
+        align-items: stretch;
+
+        padding: 12px 14px;
+        gap: 8px;
+    }
+
+    .sidenav img {
+        width: 90px;   /* a bit bigger looks nicer */
+        height: auto;  /* prevent distortion */
+        align-self: flex-start;
+    }
+
+    .sidenav a,
+    .sidenav button {
+        width: 100%;
+        display: block;
+        text-align: left;
+
+        font-size: 16px;
+        padding: 12px;
+        margin: 0;
+    }
+
+    .container {
+        padding: 20px 15px;
+    }
+
+    .hero {
+        padding: 20px 15px;
+        min-height: auto;
+    }
+
+    .card {
+        padding: 25px 20px;
+        width: 100%;
+    }
+
+    .card h1 {
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+
+    .card h2 {
+        font-size: 22px;
+        margin-top: 20px;
+        margin-bottom: 12px;
+    }
+
+    .card p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .card ul {
+        margin-left: 15px;
+    }
+
+    .card li {
+        font-size: 15px;
+        margin-bottom: 8px;
+    }
+
+    .actions {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .action-btn {
+        width: 100%;
+        text-align: center;
+        padding: 12px 20px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .sidenav {
+        padding: 10px 12px;
+        gap: 6px;
+    }
+
+    .sidenav img {
+        width: 70px;
+        height: auto;
+    }
+
+    .sidenav a,
+    .sidenav button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .container {
+        padding: 15px 10px;
+    }
+
+    .card {
+        padding: 20px 15px;
+    }
+
+    .card h1 {
+        font-size: 24px;
+    }
+
+    .card h2 {
+        font-size: 20px;
+    }
+
+    .card p,
+    .card li {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 400px) {
+
+    .sidenav img {
+        width: 60px;
+        height: auto;
+    }
+
+    .card h1 {
+        font-size: 22px;
+    }
+
+    .card h2 {
+        font-size: 18px;
+    }
+
+    .action-btn {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+}
