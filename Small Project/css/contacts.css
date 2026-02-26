@@ -36,87 +36,10 @@ body#contacts-page {
     padding-top: 140px;            /* space for fixed header + tabs */
 }
 
-
-/* ============================================================
-   NAVIGATION BAR (FIXED TOP) - ADDED FROM OTHER PAGES
-   ============================================================ */
-.site-nav {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    padding: 0;
-
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.nav-container {
-    max-width: 1200px;
+body#contacts-page .nav-container {
+    width: 97%;
     margin: 0 auto;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 0 20px;
-    width: 100%;
-}
-
-.site-nav .logo {
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    padding: 15px 0;
-    display: block;
-}
-
-.site-nav .logo:hover {
-    opacity: 0.9;
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-    margin: 0;
     padding: 0;
-}
-
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    transition: opacity 0.3s;
-    padding: 10px 0;
-}
-
-.nav-links a:hover {
-    opacity: 0.8;
-}
-
-.nav-links .nav-cta {
-    background-color: rgba(255, 255, 255, 0.2);
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: 1px solid white;
-    transition: all 0.3s;
-}
-
-.nav-links .nav-cta:hover {
-    background-color: white;
-    color: #667eea;
-}
-
-.nav-toggle {
-    display: none;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 24px;
-    cursor: pointer;
 }
 
 /* ============================================================
@@ -126,7 +49,7 @@ body#contacts-page {
    ============================================================ */
 .tab-bar {
     position: fixed;
-    top: 70px;
+    top: 115.5px;
     left: 0;
 
     width: 100%;
@@ -166,7 +89,7 @@ body#contacts-page {
 /* Active tab stands out more */
 .tab.active {
     opacity: 1;
-    background: rgba(200, 235, 255, 0.28);
+    background: rgba(198, 221, 231, 0.95);
 }
 
 
@@ -181,7 +104,7 @@ body#contacts-page {
     width: 90%;
     max-width: 1000px;
 
-    background: rgba(255, 255, 255, 0.25);
+    background:  rgba(189, 210, 219, 0.95);
     backdrop-filter: blur(16px);
 
     border-radius: 22px;
@@ -530,4 +453,5 @@ body#contacts-page {
         padding: 15px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
+}
 }
