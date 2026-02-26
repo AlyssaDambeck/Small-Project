@@ -32,8 +32,6 @@ body#signup-page {
     align-items: center;
     justify-content: center;
 
-    /* space for fixed nav bar */
-    padding-top: 80px;
 }
 
 
@@ -58,15 +56,12 @@ body#signup-page {
 
 /* Nav inner wrapper for alignment + max width */
 .nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    padding: 0 20px;
-    width: 100%;
+    padding: 0 30px;
+    width: 97%;
 }
 
 
@@ -96,7 +91,7 @@ body#signup-page {
     list-style: none;
 
     display: flex;
-    gap: 30px;
+    gap: 30px; /* spacing between home/about/login*/
 
     margin: 0;
     padding: 0;
@@ -176,7 +171,7 @@ body#signup-page {
     width: 450px;
     padding: 40px;
 
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(233, 248, 255, 0.95);
     border-radius: 15px;
 
     box-shadow: 0px 10px 30px rgba(0,0,0,0.3);
@@ -234,7 +229,7 @@ body#signup-page {
 
 /* Input fields */
 .input-group input {
-    width: 100%;
+    width: 94%;
     padding: 12px;
 
     border: 2px solid #ddd;
